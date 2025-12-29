@@ -53,6 +53,24 @@ Made with [Cursor](https://cursor.com)
 4.  **Open the game:**
     Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Spin-off Experiences
+
+IsoCity now ships with two relaxing side modes that reuse the isometric canvas:
+
+- **Zen Cityscapes** (`/zen-cityscapes`): Pair a 4x4 merge puzzle with soft city-building so every merge grows a new tiered building on the isometric grid. It is a slow, no-pressure creative loop focused on visual rewards.
+- **Starlight Village** (`/starlight-village`): A nighttime fantasy village where you help spirit villagers by playing cozy mini-games (star-catching, potion brewing, etc.). Completing each mini-game lights up a different area of the village with lantern glow.
+
+## Zen Cityscapes
+
+Zen Cityscapes is a relaxing merge-and-build mode that pairs a 4x4 merge puzzle with the isometric renderer.
+There is no economy, timers, or fail state; each merge grows the skyline visually.
+
+To play locally after starting the dev server, visit:
+
+```
+http://localhost:3000/zen-cityscapes
+```
+
 ## Contributing
 
 Contributions are welcome! Whether it's reporting a bug, proposing a new feature, or submitting a pull request, your input is valued.

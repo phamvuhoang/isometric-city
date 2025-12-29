@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { GameProvider } from '@/context/GameContext';
 import { MultiplayerContextProvider } from '@/context/MultiplayerContext';
@@ -291,6 +292,7 @@ function SavedCityCard({ city, onLoad, onDelete }: { city: SavedCityMeta; onLoad
             </span>
           )}
         </div>
+
         <div className="flex items-center gap-3 mt-1 text-xs text-white/50">
           <span>Pop: {city.population.toLocaleString()}</span>
           <span>${city.money.toLocaleString()}</span>
@@ -552,6 +554,31 @@ export default function HomePage() {
               </div>
             </div>
           )}
+
+          <div className="w-full max-w-xs mt-6 space-y-3 rounded-sm border border-white/10 bg-white/5 p-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                Quiet experiences
+              </h2>
+              <span className="text-[10px] text-white/40">No pressure</span>
+            </div>
+            <div className="grid gap-3">
+              <Link
+                href="/zen-cityscapes"
+                className="block rounded-sm border border-white/20 bg-slate-900/60 px-3 py-3 text-sm text-white/80 transition hover:border-sky-300/60 hover:text-white"
+              >
+                <div className="font-semibold text-primary">Zen Cityscapes</div>
+                <p className="text-[11px] text-white/50">Merge tiles, unlock buildings, and watch the skyline glow.</p>
+              </Link>
+              <Link
+                href="/starlight-village"
+                className="block rounded-sm border border-white/20 bg-slate-900/60 px-3 py-3 text-sm text-white/80 transition hover:border-emerald-300/60 hover:text-white"
+              >
+                <div className="font-semibold text-secondary">Starlight Village</div>
+                <p className="text-[11px] text-white/50">Play gentle mini-games to light up the night village.</p>
+              </Link>
+            </div>
+          </div>
           
           {/* Co-op Modal */}
           <CoopModal
@@ -650,6 +677,54 @@ export default function HomePage() {
             <SpriteGallery count={16} />
           </div>
         </div>
+
+        <section className="mt-12 max-w-5xl w-full">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                New relaxed journeys
+              </p>
+              <h3 className="text-2xl font-light text-white/90">
+                Explore gentle spin-offs of IsoCity
+              </h3>
+            </div>
+            <span className="text-xs text-white/40">
+              Try them any time — no save data is tied to your main city.
+            </span>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <Link
+              href="/zen-cityscapes"
+              className="group flex flex-col rounded-sm border border-white/10 bg-white/5 p-5 transition hover:border-sky-400/60"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-lg font-semibold text-white">Zen Cityscapes</span>
+                <span className="text-xs text-white/50">Merge & build</span>
+              </div>
+              <p className="mt-3 text-sm text-white/60">
+                Merge tiles to unlock higher-tier buildings and watch the isometric skyline bloom at your pace.
+              </p>
+              <span className="mt-4 text-xs font-semibold text-sky-300 transition group-hover:text-sky-200">
+                Visit → 
+              </span>
+            </Link>
+            <Link
+              href="/starlight-village"
+              className="group flex flex-col rounded-sm border border-white/10 bg-white/5 p-5 transition hover:border-emerald-400/60"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-lg font-semibold text-white">Starlight Village</span>
+                <span className="text-xs text-white/50">Mini-games</span>
+              </div>
+              <p className="mt-3 text-sm text-white/60">
+                Spend time in a cozy night village; gentle mini-games light up lanterns and spirit homes.
+              </p>
+              <span className="mt-4 text-xs font-semibold text-emerald-300 transition group-hover:text-emerald-200">
+                Visit → 
+              </span>
+            </Link>
+          </div>
+        </section>
         
         {/* Co-op Modal */}
         <CoopModal

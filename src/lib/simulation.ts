@@ -723,7 +723,7 @@ function createTile(x: number, y: number, buildingType: BuildingType = 'grass'):
 // Building types that don't require construction (already complete when placed)
 const NO_CONSTRUCTION_TYPES: BuildingType[] = ['grass', 'empty', 'water', 'road', 'bridge', 'tree'];
 
-function createBuilding(type: BuildingType): Building {
+export function createBuilding(type: BuildingType): Building {
   // Buildings that don't require construction start at 100% complete
   const constructionProgress = NO_CONSTRUCTION_TYPES.includes(type) ? 100 : 0;
   
